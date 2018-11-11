@@ -30,6 +30,12 @@ KKT-1-3 Search Songlist
     Element Text Should Be    xpath://*[@id="search-page"]/div[4]/div[1]/div/div[1]/div/a/div[1]/span    藍井艾露 (Eir Aoi)
     Element Text Should Be    xpath://*[@id="search-page"]/div[4]/div[1]/div/div[1]/div/div/h3/a    藍井艾露 (Eir Aoi) 歷年精選
 
+KKT-1-4 Searchbar is empty
+    Wait KKBOX HomePage
+    Click Search
+    Element Should Not Be Visible    xpath://*[contains(@class, 'tablist')]
+    Element Should Be Visible    xpath://*[contains(@class, 'slider_content')]/h5[contains(text(), '直擊每個音樂的美好瞬間。')]
+
 *** KeyWords ***
 Open Chrome Browser
     Open Browser    https://www.kkbox.com/tw/tc/index.html    Chrome
