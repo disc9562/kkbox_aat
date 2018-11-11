@@ -8,3 +8,7 @@ Open Chrome Browser
 Wait KKBOX HomePage
     Wait Until Element Is Visible    xpath://*[@id="pm-web-header"]/div/div[1]/a
     Wait Until Element Is Visible    name:word
+
+Click Search
+    Click Element    xpath://*[@id="pm-web-header"]/div/div[2]/form/button
+    
