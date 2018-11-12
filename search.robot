@@ -6,7 +6,7 @@ Test Teardown    Close Browser
 
 *** Test Cases ***
 KKT-1-1 Search Singer
-    Wait KKBOX HomePage
+    Wait Until KKBOX HomePage Show
     Input Text For Search    X Japan
     Click Search
     Tablist should show    歌手
@@ -14,7 +14,7 @@ KKT-1-1 Search Singer
     Element Text Should Be   xpath://*[@id="search-page"]/div[4]/div[2]/div/div[1]/div/div[2]/h3/a    X JAPAN
 
 KKT-1-2 Search Song
-    Wait KKBOX HomePage
+    Wait Until KKBOX HomePage Show
     Input Text For Search    完全感覺Dreamer
     Click Search
     Tablist should show    歌曲
@@ -22,7 +22,7 @@ KKT-1-2 Search Song
     Element Text Should Be   xpath://*[@id="search-page"]/div[4]/div[2]/div/div[1]/table/tbody/tr/td[2]/a    完全感覚Dreamer
     
 KKT-1-3 Search Songlist
-    Wait KKBOX HomePage
+    Wait Until KKBOX HomePage Show
     Input Text For Search    藍井艾露
     Click Search
     Tablist should show    歌單
@@ -30,17 +30,23 @@ KKT-1-3 Search Songlist
     Element Text Should Be    xpath://*[@id="search-page"]/div[4]/div[1]/div/div[1]/div/a/div[1]/span    藍井艾露 (Eir Aoi)
     Element Text Should Be    xpath://*[@id="search-page"]/div[4]/div[1]/div/div[1]/div/div/h3/a    藍井艾露 (Eir Aoi) 歷年精選
 
-KKT-1-4 Searchbar is empty
-    Wait KKBOX HomePage
+KKT-1-4 Searchbar Is Empty
+    Wait Until KKBOX HomePage Show
     Click Search
     Element Should Not Be Visible    xpath://*[contains(@class, 'tablist')]
     Element Should Be Visible    xpath://*[contains(@class, 'slider_content')]/h5[contains(text(), '直擊每個音樂的美好瞬間。')]
+
+KKT-1-5 Cannot Find Anything
+    Wait Until KKBOX HomePage Show
+    Input Text For Search    spadkqwpdokq
+    Click Search
+    Element Should Be Visible    xpath://*[contains(@class, 'state-main')]/h1[contains(text(), '找不到符合「spadkqwpdokq」的搜尋結果')]
 
 *** KeyWords ***
 Open Chrome Browser
     Open Browser    https://www.kkbox.com/tw/tc/index.html    Chrome
 
-Wait KKBOX HomePage
+Wait Until KKBOX HomePage Show
     Wait Until Element Is Visible    xpath://*[@id="pm-web-header"]/div/div[1]/a
     Wait Until Element Is Visible    name:word
 
