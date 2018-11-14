@@ -1,6 +1,5 @@
 *** Settings ***
 Library    SeleniumLibrary
-# Resource    ./KeyWords.txt
 Test Setup    Open Chrome Browser
 Test Teardown    Close Browser
 
@@ -42,13 +41,13 @@ KKT-1-5 Search But Got Nothing
     Click Search
     Element Should Be Visible    xpath://*[contains(@class, 'state-main')]/h1[contains(text(), '找不到符合「spadkqwpdokq」的搜尋結果')]
 
-KKT-1-6 Search With Exceed Max Length Input
+KKT-1-6 Search With Exceed Max Length Input (Max=50)
     Wait Until KKBOX HomePage Show
     Input Text For Search    01234567890123456789012345678901234567890123456789E
     Click Search
     Searchbar Text Should Be   01234567890123456789012345678901234567890123456789
 
-KKT-1-7 Search With Max Length Input
+KKT-1-7 Search With Max Length Input (Max=50)
     Wait Until KKBOX HomePage Show
     Input Text For Search    01234567890123456789012345678901234567890123456789
     Click Search
