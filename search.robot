@@ -42,9 +42,15 @@ KKT-1-5 Search But Got Nothing
     Click Search
     Element Should Be Visible    xpath://*[contains(@class, 'state-main')]/h1[contains(text(), '找不到符合「spadkqwpdokq」的搜尋結果')]
 
-KKT-1-6 Search With Max Length Input
+KKT-1-6 Search With Exceed Max Length Input
     Wait Until KKBOX HomePage Show
-    Input Text For Search  123456789123456789123456789123456789123456789123456789
+    Input Text For Search  123456789123456789123456789123456789123456789123456
+    Click Search
+    Element Should Be Visible    xpath://*[contains(@class, 'state-main')]/h1[contains(text(), '找不到符合「12345678912345678912345678912345678912345678912345」的搜尋結果')]
+
+KKT-1-7 Search With Max Length Input
+    Wait Until KKBOX HomePage Show
+    Input Text For Search  12345678912345678912345678912345678912345678912345
     Click Search
     Element Should Be Visible    xpath://*[contains(@class, 'state-main')]/h1[contains(text(), '找不到符合「12345678912345678912345678912345678912345678912345」的搜尋結果')]
 
