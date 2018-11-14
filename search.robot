@@ -26,8 +26,7 @@ KKT-1-3 Search Songlist
     Click Search
     Tablist Should Show    歌單
     Click Tablist Element    歌單
-    Element Text Should Be    xpath://*[@id="search-page"]/div[4]/div[1]/div/div[1]/div/a/div[1]/span    藍井艾露 (Eir Aoi)
-    Element Text Should Be    xpath://*[@id="search-page"]/div[4]/div[1]/div/div[1]/div/div/h3/a    藍井艾露 (Eir Aoi) 歷年精選
+    Element Should Be Visible    xpath://*[@id="search-page"]//*[contains(@class, "search-group")]//*[contains(text(), "藍井艾露")]
 
 KKT-1-4 Search Without Input
     Wait Until KKBOX HomePage Show
