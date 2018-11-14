@@ -44,15 +44,15 @@ KKT-1-5 Search But Got Nothing
 
 KKT-1-6 Search With Exceed Max Length Input
     Wait Until KKBOX HomePage Show
-    Input Text For Search  123456789123456789123456789123456789123456789123456
+    Input Text For Search    012345678901234567890123456789012345678901234567890
     Click Search
-    Element Should Be Visible    xpath://*[contains(@class, 'state-main')]/h1[contains(text(), '找不到符合「12345678912345678912345678912345678912345678912345」的搜尋結果')]
+    Searchbar Text Should Be   01234567890123456789012345678901234567890123456789
 
 KKT-1-7 Search With Max Length Input
     Wait Until KKBOX HomePage Show
-    Input Text For Search  12345678912345678912345678912345678912345678912345
+    Input Text For Search    01234567890123456789012345678901234567890123456789
     Click Search
-    Element Should Be Visible    xpath://*[contains(@class, 'state-main')]/h1[contains(text(), '找不到符合「12345678912345678912345678912345678912345678912345」的搜尋結果')]
+    Searchbar Text Should Be    01234567890123456789012345678901234567890123456789
 
 *** KeyWords ***
 Open Chrome Browser
@@ -76,3 +76,7 @@ Tablist Should Show
 Click Tablist Element
     [Arguments]  ${text}
     Click Element    xpath://*[contains(@class, 'tablist')]//*[contains(text(), '${text}')]
+
+Searchbar Text Should Be
+    [Arguments]  ${text}
+    Textfield Value Should Be    name:word    ${text}
