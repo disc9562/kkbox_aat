@@ -6,7 +6,7 @@ Test Teardown    Close Browser
 *** Test Cases ***
 KKT-1-1 Search Singer
     Wait Until KKBOX HomePage Show
-    Input Text For Search    X Japan
+    Input Text For Search    X JAPAN
     Click Search
     Tablist Should Show    歌手
     Click Tablist Element    歌手
